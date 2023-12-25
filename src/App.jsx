@@ -15,10 +15,20 @@ function App() {
     },
   ]);
 
+  const toggleCompleted = (todoId) => {
+    const updateTodo = todos.map((todo) => {
+      if (todo.id === todoId) {
+        todo.completed = !todo.completed;
+      }
+      return todo;
+    });
+    setTodos(updateTodo);
+  };
+
   return (
     <div style={style.container}>
       <h1 style={style.title}>ToDo Lists</h1>
-      <Todos todos={todos} />
+      <Todos todos={todos} toggleCompleted={toggleCompleted} />
     </div>
   );
 }
