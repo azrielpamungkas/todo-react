@@ -1,14 +1,25 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [todos, setTodos] = useState([
+    {
+      id: 1,
+      title: "Learn React",
+      completed: false,
+    },
+    {
+      id: 2,
+      title: "Calisthenic",
+      completed: true,
+    },
+  ]);
 
   return (
     <>
       <h1>Hello World!</h1>
+      {todos.map((todo) => {
+        return <p key={todo.id}>{todo.title}</p>;
+      })}
     </>
   );
 }
