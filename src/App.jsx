@@ -16,11 +16,22 @@ function App() {
   ]);
 
   return (
-    <>
-      <h1>Hello World!</h1>
+    <div style={style.container}>
+      <h1 style={style.title}>ToDo Lists</h1>
       <Todos todos={todos} />
-    </>
+    </div>
   );
 }
+
+const style = {
+  container: {
+    textAlign: "center",
+    padding: "12px",
+  },
+
+  title: {
+    fontSize: "40px",
+  },
+};
 
 export default App;
